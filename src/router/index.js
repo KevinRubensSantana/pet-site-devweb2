@@ -10,12 +10,12 @@ const router = createRouter({
     {
       path: '/pets',
       name: 'pets',
-      component: () => import('../views/PetsView.vue'),
+      component: () => import('../views/PetViews.vue'),
     },
     {
       path: '/pets/novo',
       name: 'addPet',
-      component: () => import('../views/AddPetsView.vue'),
+      component: () => import('../views/AddPetView.vue'),
     },
   ],
 });

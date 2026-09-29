@@ -1,0 +1,39 @@
+{
+  "tutores": [
+    {
+      "id": "1",
+      "nome": "João",
+      "telefone": "479999100100"
+    },
+    {
+      "id": "2",
+      "nome": "Maria",
+      "telefone": "479999100100"
+    },
+    {
+      "id": "3",
+      "nome": "Ana",
+      "telefone": "479999100100"
+    }
+  ],
+  "pets": [
+    {
+      "id": "1",
+      "nome": "Safira",
+      "especie": "Cachorro",
+      "tutorId": "1"
+    },
+    {
+      "id": "2",
+      "nome": "Melado",
+      "especie": "Cachorro",
+      "tutorId": "2"
+    },
+    {
+      "id": "3",
+      "nome": "Pandora",
+      "especie": "Gato",
+      "tutorId": "3"
+    }
+  ]
+}
