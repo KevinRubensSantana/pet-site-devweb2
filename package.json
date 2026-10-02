@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "aura": "vite",
+    "tung": "vite",
     "build": "vite build",
     "preview": "vite preview",
     "lint": "run-s \"lint:*\"",

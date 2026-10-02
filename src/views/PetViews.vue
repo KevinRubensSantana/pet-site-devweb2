@@ -1,42 +1,41 @@
 <script setup>
-
 import { onMounted, ref } from 'vue';
 import { RouterLink } from 'vue-router';
 
 const API_URL = 'http://localhost:3000';
 
-const pets = ref([])
-
-const tutores = ref([])
-
-const loading = ref(true)
+const pets = ref([]);
+const tutores = ref([]);
+const loading = ref(true);
 
 async function carregarDados() {
-  const respostaPets = await fetch(`${API_URL}/pets`)
+  const respostaPets = await fetch(`${API_URL}/pets`);
   pets.value = await respostaPets.json();
-  console.log('pets',pets.value)
 
-  const respostaTutores = await fetch(`${API_URL}/tutores`)
+  console.log('Pets:', pets.value);
+
+  const respostaTutores = await fetch(`${API_URL}/tutores`);
   tutores.value = await respostaTutores.json();
 
-  console.log('turores',tutores.value)
+  console.log('Tutores:', tutores.value);
 
-  loading.value = false
+  loading.value = false;
 }
 
-
-function nomeTutor(tutorId) {
+function nomeDoTutor(tutorId) {
   for (const tutor of tutores.value) {
-    if (tutor.id == tutorId) {
+    console.log('tutor', tutorId);
+    // tutor.id == tutorId
+    if (tutor.id === tutorId) {
       return tutor.nome;
     }
   }
-
-  return 'Tutor Não Encontrado'
+  return 'Tutor Não Encontrado!';
 }
 
+// Recebe o tutorId do pet e procura o tutor correspondente.
 
-onMounted(carregarDados)
+onMounted(carregarDados);
 </script>
 
 <template>
@@ -55,26 +54,29 @@ onMounted(carregarDados)
       Adicionar Pet
     </RouterLink>
 
-    <table class="table table-striped">
+    <table class="table table-striped table-hover">
       <thead>
         <tr>
-          <th>Id</th>
+          <th>ID</th>
           <th>Nome</th>
           <th>Especie</th>
           <th>Tutor</th>
+          <th>Ações</th>
         </tr>
       </thead>
 
       <tbody>
-        <tr v-for="pet in pets" :key="pet.id">
-          <th>{{ pet.id }}</th>
-          <th>{{ pet.nome }}</th>
-          <th>{{ pet.especie }}</th>
-          <th>{{ nomeTutor(pet.tutorId) }}</th>
+        <tr
+          v-for="pet in pets"
+          :key="pet.id"
+        >
+          <td>{{ pet.id }}</td>
+          <td>{{ pet.nome }}</td>
+          <td>{{ pet.especie }}</td>
+          <td>{{ nomeDoTutor(pet.tutorId) }}</td>
+          <td><RouterLink :to='`/pets/${pet.id}`'>Visualizar</RouterLink></td>
         </tr>
       </tbody>
-
     </table>
-
   </div>
 </template>
