@@ -16,24 +16,7 @@
       "telefone": "479999100100"
     }
   ],
-  "pets": [
-    {
-      "id": "1",
-      "nome": "Safira",
-      "especie": "Cachorro",
-      "tutorId": "1"
-    },
-    {
-      "id": "2",
-      "nome": "Melado",
-      "especie": "Cachorro",
-      "tutorId": "2"
-    },
-    {
-      "id": "3",
-      "nome": "Pandora",
-      "especie": "Gato",
-      "tutorId": "3"
-    }
-  ]
+  "pets": [],
+  "$schema": "./node_modules/json-server/schema.json"
 }
+

@@ -26,12 +26,12 @@ async function carregarTutores() {
 async function salvarPet() {
   await fetch(`${API_URL}/pets`, {
     method: 'POST',
-    header: {
-      'Content-type': 'application/json',
+    headers: {
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify(novoPet.value),
   });
-  router.push('/pets');
+  router.push('/pets'); 
 }
 
 onMounted(carregarTutores);
