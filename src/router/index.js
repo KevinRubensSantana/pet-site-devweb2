@@ -25,12 +25,12 @@ const router = createRouter({
     {
       path: '/tutores',
       name: 'tutores',
-      component: () => import('../views/TutorView.vue'),
+      component: () => import('../views/TutoresView.vue'),
     },
     {
       path: '/tutores/novo',
       name: 'addTutor',
-      component: () => import('../views/addTutor.vue'),
+      component: () => import('../views/AddTutorView.vue'),
     },
     {
       path: '/tutores/:id',

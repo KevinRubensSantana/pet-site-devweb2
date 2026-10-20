@@ -26,12 +26,12 @@ async function carregarTutores() {
 async function salvarPet() {
   await fetch(`${API_URL}/pets`, {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
+    header: {
+      'Content-type': 'application/json',
     },
     body: JSON.stringify(novoPet.value),
   });
-  router.push('/pets'); 
+  router.push('/pets');
 }
 
 onMounted(carregarTutores);
@@ -134,6 +134,12 @@ onMounted(carregarTutores);
           </option>
         </select>
       </div>
+      <button
+        type="submit"
+        class="btn btn-success mt-2"
+      >
+        Salvar Pet
+      </button>
     </form>
   </div>
 </template>

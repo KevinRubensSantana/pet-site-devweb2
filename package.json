@@ -11,7 +11,7 @@
     "lint:oxlint": "oxlint . --fix",
     "lint:eslint": "eslint . --fix --cache",
     "format": "prettier --write src/",
-    "api": "npx json-server --watch db.json"
+    "api": "npx json-server db.jason"
   },
   "dependencies": {
     "axios": "^1.20.0",
